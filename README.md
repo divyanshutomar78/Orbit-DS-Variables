@@ -4,7 +4,16 @@ Design tokens exported from Figma (`tokens.json`), built with [Style Dictionary]
 
 Semantic theme colors keep their **links** to primitives (e.g. `{Green.400}` → `$green-400` / `var(--green-400)`).
 
-## Quick start
+## Quick start (developers)
+
+Clone the repo and use the pre-built files in `dist/` — no build step required:
+
+```bash
+git clone https://github.com/divyanshutomar78/Orbit-Personal-Tokens.git
+# import from dist/scss, dist/css, or dist/tailwind in your app
+```
+
+To rebuild locally (optional):
 
 ```bash
 npm install
@@ -13,7 +22,7 @@ npm run build:tokens
 
 Source of truth: `tokens.json` (Figma / Tokens Studio export).
 
-Generated output lives in `dist/`:
+Generated output lives in `dist/` (updated automatically by GitHub Actions when `tokens.json` changes):
 
 | Output | Path | Notes |
 |--------|------|--------|
@@ -129,6 +138,27 @@ Load platform CSS variables in your app:
 | `npm run build:tokens` | Split + build all platforms |
 | `npm run split:tokens` | Split `tokens.json` only |
 
+## GitHub automation
+
+When `tokens.json` is pushed to `main`, the [Build design tokens](.github/workflows/build-tokens.yml) workflow runs automatically:
+
+1. Installs dependencies and runs `npm run build:tokens`
+2. Commits updated `dist/` back to the same branch
+3. Developers pull the latest `main` to get fresh SCSS, CSS, and Tailwind outputs
+
+**Typical flow (Figma → developers):**
+
+1. Export or sync `tokens.json` from Figma / Tokens Studio
+2. Commit and push `tokens.json` to `main` on GitHub
+3. Wait for the Actions workflow to finish (check the **Actions** tab)
+4. `git pull` in consuming projects — or re-clone — to pick up new `dist/` files
+
+You can also trigger a rebuild manually: **Actions → Build design tokens → Run workflow**.
+
+The workflow only re-runs when `tokens.json`, build scripts, or `package.json` change — commits that touch only `dist/` do not trigger another build (no infinite loop).
+
+**Repo setup (one time):** ensure [GitHub Actions](https://github.com/divyanshutomar78/Orbit-Personal-Tokens/actions) is enabled for the repository. Push this workflow file to `main` once to activate it.
+
 ## Project layout
 
 ```
@@ -139,5 +169,6 @@ scripts/
   formats/tailwind-colors.mjs
   formats/tailwind-nested.mjs
   formats/tailwind-theme.mjs
-dist/                    # Generated (commit or CI-publish as you prefer)
+dist/                    # Generated; committed by CI on tokens.json changes
+.github/workflows/       # build-tokens.yml — automated rebuild
 ```
