@@ -1,0 +1,93 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --shadow-action-menu: rgba(0, 0, 0, 0.5);
+  --shadow-navigation: rgba(0, 0, 0, 0.5);
+  --shadow-card: #000000;
+  --shadow-popup-message: rgba(0, 0, 0, 0.7);
+  --shadow-submit-section: rgba(0, 0, 0, 0.8);
+  --shadow-chip: rgba(0, 0, 0, 0.5);
+  --chips-neutral-color-neutral-2: #474747;
+  --chips-neutral-color-hover: #545454;
+  --chips-neutral-color-checked: #6e6e6e;
+  --chips-attemtion-default: #8a5323;
+  --chips-attemtion-hover: #9d5416;
+  --chips-attemtion-selected: #df781f;
+  --chips-warning-default: #861313;
+  --chips-warning-hover: #b00202;
+  --chips-warning-selected: #e80303;
+  --chips-success-default: #2c5126;
+  --chips-success-hover: #317128;
+  --chips-success-selected: #3f9233;
+  --chips-critical-default: #772d6b;
+  --chips-critical-hover: #9a3289;
+  --chips-critical-selected: #b13a9e;
+  --chips-blue-default: #12597c;
+  --chips-blue-hover: #17709c;
+  --chips-blue-selected: #1a80b2;
+  --xtra-sergei-variables-bg-darker: var(--black-alpha-30);
+  --xtra-sergei-variables-bg-lighter: var(--white-alpha-5);
+  --xtra-sergei-variables-documet-line-formerly-on-bg-disabled: var(--white-alpha-30);
+  --xtra-sergei-variables-bg-accent: var(--white-alpha-5); /** BG dark inverse */
+  --xtra-sergei-variables-always-black: var(--neutral-10000);
+  --xtra-sergei-variables-always-white: var(--neutral-0);
+  --xtra-sergei-variables-bg-2: var(--neutral-400);
+  --xtra-sergei-variables-bg-accent-inverted: var(--black-alpha-30); /** BG light inverse */
+  --xtra-sergei-variables-on-action-hover: var(--neutral-500);
+  --xtra-sergei-variables-on-action-active: var(--neutral-10000);
+  --xtra-sergei-variables-bg-accent-2: var(--white-alpha-15); /** BG light inverse */
+  --border-primary: var(--white-alpha-25);
+  --border-secondary: var(--white-alpha-15);
+  --border-action: var(--blue-200);
+  --border-action-hover: var(--blue-100);
+  --border-attention: var(--orange-600);
+  --border-neutral: var(--blue-350);
+  --text-action: var(--blue-250);
+  --text-action-hover: var(--blue-100);
+  --text-primary: var(--neutral-0);
+  --text-secondary: var(--white-alpha-60);
+  --text-on-action: var(--neutral-100);
+  --text-action-active: var(--neutral-0);
+  --text-disabled: var(--white-alpha-30);
+  --text-on-disabled: var(--neutral-400);
+  --text-attention: var(--orange-600);
+  --text-warning: var(--red-350);
+  --text-critical: var(--magenta-300);
+  --text-on-success-container-variant: var(--green-350);
+  --text-on-attention-container: var(--orange-600);
+  --text-on-success-container: var(--green-325);
+  --text-on-attention-container-variant: var(--orange-600);
+  --text-success: var(--green-325);
+  --text-on-warning-container: var(--red-500);
+  --text-on-warning-container-variant: var(--red-500);
+  --text-on-critical-container: var(--magenta-300);
+  --background-background: var(--neutral-600);
+  --background-inside-surface-2: var(--black-alpha-20);
+  --background-inside-surface-1: var(--white-alpha-5);
+  --background-surface-container-2: var(--neutral-400);
+  --background-surface-container-1: var(--neutral-500);
+  --background-input-fields: var(--white-alpha-5);
+  --background-success-container-variant: var(--green-550);
+  --background-attention-container: var(--orange-700);
+  --background-warning-container-variant: var(--red-700);
+  --background-success-container: var(--green-600);
+  --background-attention-container-variant: var(--orange-700);
+  --background-warning-container: var(--red-700);
+  --background-critical-container: var(--magenta-600);
+  --background-critical-container-variant: var(--magenta-500);
+  --background-action: var(--blue-200);
+  --background-disabled: var(--white-alpha-30);
+  --background-action-hover: var(--blue-100);
+  --background-neutral-container: var(--blue-350);
+  --background-surface-container-3: var(--neutral-350);
+  --chips-neutral-color-neutral: var(--neutral-0);
+  --icon-secondary: var(--white-alpha-65);
+  --icon-action: var(--blue-200);
+  --icon-disabled: var(--white-alpha-30);
+  --icon-primary: var(--neutral-0);
+  --icon-on-action: var(--neutral-100);
+  --icon-attention: var(--orange-600);
+  --scrollbar: var(--white-alpha-30);
+}
