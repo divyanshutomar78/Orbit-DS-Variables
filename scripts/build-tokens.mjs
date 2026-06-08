@@ -1,7 +1,7 @@
 import { register } from '@tokens-studio/sd-transforms';
 import StyleDictionary from 'style-dictionary';
 import { formats } from 'style-dictionary/enums';
-import { writeFile, mkdir } from 'node:fs/promises';
+import { writeFile, readFile, mkdir } from 'node:fs/promises';
 import path from 'node:path';
 import { splitTokens, slugifySetName } from './split-tokens.mjs';
 import { tailwindColors } from './formats/tailwind-colors.mjs';
@@ -250,6 +250,30 @@ async function writeThemeCssBundles(colorSets) {
   }
 }
 
+const SCSS_PRIMITIVE_USE = "@use '../../primitives/variables' as *;";
+
+async function injectThemeScssPrimitiveImports(colorSets) {
+  for (const setName of colorSets) {
+    if (!setName.startsWith(THEME_SET_PREFIX)) continue;
+
+    const slug = themeSlugFromSet(setName);
+    const filePath = path.join(ROOT, 'dist/scss/themes', slug, '_variables.scss');
+    const content = await readFile(filePath, 'utf8');
+
+    if (content.includes(SCSS_PRIMITIVE_USE)) continue;
+
+    const updated = content.replace(
+      /^(\/\/ Do not edit directly, this file was auto-generated\.)\n\n/m,
+      `$1\n\n${SCSS_PRIMITIVE_USE}\n`,
+    );
+
+    await writeFile(filePath, updated);
+
+    const indexScss = `// Auto-generated from tokens.json — do not edit directly.\n${SCSS_PRIMITIVE_USE}\n@forward 'variables';\n`;
+    await writeFile(path.join(ROOT, 'dist/scss/themes', slug, '_index.scss'), indexScss);
+  }
+}
+
 async function build() {
   const { sets, colorSets, platformSets } = await splitTokens();
 
@@ -274,6 +298,7 @@ async function build() {
 
   await writeBarrelFiles(colorSets, platformSets);
   await writeThemeCssBundles(colorSets);
+  await injectThemeScssPrimitiveImports(colorSets);
 
   console.log(
     `Built ${colorSets.length} color sets + ${platformSets.length} platform sets into dist/`,
