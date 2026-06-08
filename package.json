@@ -1,6 +1,6 @@
 {
   "name": "orbit-ds-variables",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "A centralized repository of design tokens and variables for the Orbit Design System, including colors, typography, spacing, sizing, and other foundational design primitives used across products and platforms.",
   "type": "module",
   "files": ["dist"],
