@@ -1,15 +1,16 @@
 {
-  "name": "orbit-personal-tokens",
-  "version": "1.0.0",
-  "description": "Orbit design tokens — Figma variables to SCSS and Tailwind via Style Dictionary",
+  "name": "orbit-ds-variables",
+  "version": "1.0.1",
+  "description": "A centralized repository of design tokens and variables for the Orbit Design System, including colors, typography, spacing, sizing, and other foundational design primitives used across products and platforms.",
   "type": "module",
+  "files": ["dist"],
   "scripts": {
     "build:tokens": "node scripts/build-tokens.mjs",
     "split:tokens": "node scripts/split-tokens.mjs"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/divyanshutomar78/Orbit-Personal-Tokens.git"
+    "url": "git+https://github.com/divyanshutomar78/Orbit-DS-Variables.git"
   },
   "keywords": [
     "design-tokens",
@@ -21,9 +22,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/divyanshutomar78/Orbit-Personal-Tokens/issues"
+    "url": "https://github.com/divyanshutomar78/Orbit-DS-Variables/issues"
   },
-  "homepage": "https://github.com/divyanshutomar78/Orbit-Personal-Tokens#readme",
+  "homepage": "https://github.com/divyanshutomar78/Orbit-DS-Variables#readme",
   "dependencies": {
     "@tokens-studio/sd-transforms": "^2.0.3",
     "style-dictionary": "^5.4.2"

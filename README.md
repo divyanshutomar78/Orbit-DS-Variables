@@ -1,4 +1,4 @@
-# Orbit Personal Tokens
+# Orbit DS Variables
 
 Design tokens exported from Figma (`tokens.json`), built with [Style Dictionary](https://styledictionary.com/) and [@tokens-studio/sd-transforms](https://www.npmjs.com/package/@tokens-studio/sd-transforms) into **SCSS variables**, **CSS custom properties**, and **Tailwind maps** for colors and platform tokens.
 
